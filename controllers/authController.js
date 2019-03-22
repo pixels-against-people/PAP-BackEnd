@@ -6,12 +6,14 @@ module.exports = (io) => {
   io.on('connection', (client) => {
     // checks user auth and logs in
     client.on('Login', body => {
+      console.log("login request")
       const email = body.email.toLowerCase()
       const password = body.password
       // Find this user name
       // findone not working????
       User.findOne({ email }, 'email password')
         .then((user) => {
+          console.log("yeet")
           if (!user) {
             // User not found
             client.emit('loginres', {
