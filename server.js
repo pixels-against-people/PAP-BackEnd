@@ -1,6 +1,6 @@
 const dotenv = require('dotenv').config()
-const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URL);
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://admin:qwaszx51@ds117846.mlab.com:17846/cah-private-server' || 'mongodb://localhost/cah-backend')
 const port = 4000
 
 const io = require('socket.io')()
