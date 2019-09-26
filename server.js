@@ -1,7 +1,9 @@
 const dotenv = require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const mongoose = require('mongoose')
+app.use(cors())
 mongoose.connect('mongodb://admin:qwaszx51@ds117846.mlab.com:17846/cah-private-server' || 'mongodb://localhost/cah-backend', { useNewUrlParser: true });
 const io = require('socket.io')()
 
